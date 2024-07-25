@@ -38,17 +38,4 @@ out_meta.update({"driver": "GTiff",
 with rasterio.open("C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/OneDrive_1_23-5-2024 (1)/BA_2022_NN/imagen_recortada.tif", "w", **out_meta) as dest:
     dest.write(out_image)
 
-# Imprimir algunos valores de cada banda para verificar
-print("Valores de la Banda 1:")
-print(banda1)
-print("\nValores de la Banda 2:")
-print(banda2)
-# Imprimir las dimensiones de cada banda
-print(f"Dimensiones de la Banda 1: {banda1.shape}")
-print(f"Dimensiones de la Banda 2: {banda2.shape}")
 
-# Mostrar las geometrías extraídas
-for i, shape in enumerate(shapes):
-    print(f"Geometría {i + 1}:")
-    print(shape)
-    print()
