@@ -5,7 +5,7 @@ import geopandas as gpd
 import numpy as np
 import matplotlib.pyplot as plt
 
-image_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/OneDrive_1_23-5-2024 (1)/image_25830.tif"
+image_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/image_25830.tif"
 shapefile_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/recorte2.shp"
 puntos_shapefile_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/puntos2.shp"
 
@@ -61,16 +61,29 @@ with rasterio.open(image_path2) as src:
 # Convertir los valores a un array de NumPy para facilitar el manejo
 valores_espectrales = np.array(valores_espectrales)
 
+# Longitudes de onda en micrómetros para las 12 bandas
+longitudes_de_onda = [0.443, 0.490, 0.560, 0.665, 0.705, 0.740, 0.783, 0.842, 0.945, 1.375, 1.610, 2.190]
+
 # Crear un gráfico de la respuesta espectral
 plt.figure(figsize=(10, 10))
-for i in range(valores_espectrales.shape[1]):
-    plt.plot(valores_espectrales[:, i], label=f'Banda {i+1}')
+for valores in valores_espectrales:
+    plt.plot(longitudes_de_onda, valores, marker='o')
 
-plt.xlabel('Puntos')
-plt.ylabel('Valor de Reflectancia')
+plt.xlabel('Longitud de onda (micrómetros)')
+plt.ylabel('Reflectancia')
 plt.title('Respuesta Espectral en los Puntos de Interés')
-plt.legend()
 plt.grid(True)
+
+# # Crear un gráfico de la respuesta espectral
+# plt.figure(figsize=(10, 10))
+# for i in range(valores_espectrales.shape[1]):
+#     plt.plot(valores_espectrales[:, i], label=f'Banda {i+1}')
+
+# plt.xlabel('Puntos')
+# plt.ylabel('Valor de Reflectancia')
+# plt.title('Respuesta Espectral en los Puntos de Interés')
+# plt.legend()
+# plt.grid(True)
 
 # Guardar el gráfico como una imagen PNG
 plt.savefig("C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/resultados/respuesta_espectral.png")
