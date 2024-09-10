@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 ruta1 = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/812T.tif"
 ruta2 = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/822T.tif"
 ruta3 = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/827T.tif"
+puntos_shapefile_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/rois/Puntos_Aleatorios_Incendios.shp"
 
 for k in range (1,4):
     image_path = globals()[f"ruta{k}"]
@@ -15,7 +16,7 @@ for k in range (1,4):
     for i in range (1,8):
         
         shapefile_path = f"C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/recorte{i}.shp"
-        puntos_shapefile_path = f"C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/puntos{i}.shp"
+        #puntos_shapefile_path = f"C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/puntos{i}.shp"
 
         # Abrir el shapefile y leer las geometrías
         with fiona.open(shapefile_path, "r") as shapefile:
