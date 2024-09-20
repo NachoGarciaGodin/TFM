@@ -11,3 +11,4 @@ Los resultados de la imágenes se guardan: respuesta_espectral_k_i.png. Siendo '
 
 En pruebaZona2.py está para la zona2 únicamente y en pruebaNOincendio.py está para una zona donde no hay incendio. Se utilizaron para comprobaciones de código y errores.
 
+Para verlo de manera más clara, en comparativa.png están los 4 incendios más grandes (1, 2, 4 y 5) junto con la zona de no incendio (la 0). De manera que cada fila es una de las 3 imágenes .tiff que hay y cada columna un incendio, siendo la primera columna la de no incendio.
