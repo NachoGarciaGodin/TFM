@@ -3,12 +3,14 @@ import rasterio.mask
 import fiona
 import geopandas as gpd
 import numpy as np
+import csv
 import matplotlib.pyplot as plt
 
 ruta1 = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/812T.tif"
 ruta2 = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/822T.tif"
 ruta3 = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/827T.tif"
 puntos_shapefile_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/rois/Puntos_Aleatorios_Incendios.shp"
+#puntos_shapefile_path = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/shp/rois/POINT_PR_TFM_IG_25830.shp" 
 
 for k in range (1,4):
     image_path = globals()[f"ruta{k}"]
@@ -74,6 +76,17 @@ for k in range (1,4):
         valores_maximos = np.max(valores_espectrales, axis=0)
         valores_minimos = np.min(valores_espectrales, axis=0)
         valores_medios = np.mean(valores_espectrales, axis=0)
+
+        # Guardar los valores medios en un archivo CSV
+        csv_file = f"C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/resultados/valores_medios_{k}_{i}.csv"
+        with open(csv_file, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Banda", "Valor Medio"])
+            for r, valor_medio in enumerate(valores_medios):
+                writer.writerow([f"Banda {r+1}", valor_medio])
+
+        print("Los valores medios se han guardado en un archivo CSV.")
+
 
         # Longitudes de onda en micrómetros para las 12 bandas
         longitudes_de_onda = [0.443, 0.490, 0.560, 0.665, 0.705, 0.740, 0.783, 0.842, 0.945, 1.375, 1.610, 2.190]
