@@ -22,4 +22,5 @@ La segunda parte del proyecto se basa en:
   - Duplicar el resultado de la combinación lineal.
   - Aplicar a una el filtro exponencial y a la otra el filtro logarítmico.
   - Hacer la XOR entre el resultado de ambos filtros.
-El resdultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
+
+El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
