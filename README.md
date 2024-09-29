@@ -14,3 +14,12 @@ En pruebaZona2.py está para la zona2 únicamente y en pruebaNOincendio.py está
 Para verlo de manera más clara, en comparativa.png están los 4 incendios más grandes (1, 2, 4 y 5) junto con la zona de no incendio (la 0). De manera que cada fila es una de las 3 imágenes .tiff que hay y cada columna un incendio, siendo la primera columna la de no incendio.
 
 Finalmente, en el .csv 'calculo' están los cálculos para justificar qué bandas seleccionar.  Se han escogido los 4 incendios más grandes y los valores medios de cada banda para los 3 .tiff. Lo primero, es hacer el promedio de valores de las bandas para los 4 incendios. A continuación, se hace la diferencia del promedio de cada banda en incendio con dicha banda en no incendio. Puesto que se tienen 3 imágenes .tiff, se hace el promedio de la diferencia de cada banda en las 3 imágenes .tiff para ver qué bandas son las que más difieren. El resultado son las bandas 6, 7 y 8.
+
+En separacion_bandas.py está el código que separa las bandas 6,7 y 8 en un .tif cada una para poder abrirlas con ImageJ y poder comenzar con la segunda parte del proyecto.
+
+La segunda parte del proyecto se basa en:
+  - Combinación lineal de las capas seleccionadas.
+  - Duplicar el resultado de la combinación lineal.
+  - Aplicar a una el filtro exponencial y a la otra el filtro logarítmico.
+  - Hacer la XOR entre el resultado de ambos filtros.
+El resdultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
