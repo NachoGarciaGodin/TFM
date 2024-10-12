@@ -28,6 +28,7 @@ El resultado debería parecerse visualmente a la marca de incendios resaltada po
 A continuación tenemos:
 
 Imagen de los expertos - resultado esperado:
+
 ![EXPERTOS](https://github.com/user-attachments/assets/2007155c-affd-41c7-8b99-f955c0921fc9)
 
 Resultado para imagen 812T:
