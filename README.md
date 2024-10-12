@@ -15,12 +15,29 @@ Para verlo de manera más clara, en comparativa.png están los 4 incendios más 
 
 Finalmente, en el .csv 'calculo' están los cálculos para justificar qué bandas seleccionar.  Se han escogido los 4 incendios más grandes y los valores medios de cada banda para los 3 .tiff. Lo primero, es hacer el promedio de valores de las bandas para los 4 incendios. A continuación, se hace la diferencia del promedio de cada banda en incendio con dicha banda en no incendio. Puesto que se tienen 3 imágenes .tiff, se hace el promedio de la diferencia de cada banda en las 3 imágenes .tiff para ver qué bandas son las que más difieren. El resultado son las bandas número 6, 7 y 8, que corresponden con las bandas 6, 7 y 8A, dado que las imágenes no cuentan con la banda 8.
 
-En separacion_bandas.py está el código que separa las bandas 6,7 y 8A en un .tif cada una para poder abrirlas con ImageJ y poder comenzar con la segunda parte del proyecto.
+En separacion_bandas.py está el código que separa las bandas en un .tif cada una para poder abrirlas con ImageJ y poder comenzar con la segunda parte del proyecto.
 
 La segunda parte del proyecto se basa en:
-  - Combinación lineal de las capas seleccionadas.
+  - Combinación lineal de las capas seleccionadas. (Bandas 6, 7 y 8A y luego restar la 9 y 12 por agua y nubes)
   - Duplicar el resultado de la combinación lineal.
   - Aplicar a una el filtro exponencial y a la otra el filtro logarítmico.
   - Hacer la XOR entre el resultado de ambos filtros.
 
 El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
+
+A continuación tenemos:
+
+Imagen de los expertos - resultado esperado:
+![EXPERTOS](https://github.com/user-attachments/assets/2007155c-affd-41c7-8b99-f955c0921fc9)
+
+Resultado para imagen 812T:
+![image](https://github.com/user-attachments/assets/8eed618a-a453-454e-be88-05bf0a73e3cc)
+
+Resultado para imagen 822T:
+![image](https://github.com/user-attachments/assets/c9a0d233-ee84-4e2b-be8f-6993818285aa)
+
+Resultado para imagen 827T:
+![image](https://github.com/user-attachments/assets/f5dba2d9-c758-458c-b8d2-4ea20e171cef)
+
+
+
