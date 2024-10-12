@@ -23,7 +23,7 @@ La segunda parte del proyecto se basa en:
   - Aplicar a una el filtro exponencial y a la otra el filtro logarítmico.
   - Hacer la XOR entre el resultado de ambos filtros.
 
-El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
+Para ello se ejecuta el script 'ImageJ_script.py' en ImageJ, donde se realiza el proceso explicado para esta segunda parte. El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
 
 A continuación tenemos:
 
