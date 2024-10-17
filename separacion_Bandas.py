@@ -14,7 +14,7 @@ def guardar_banda(input_tif, output_tif, band_number):
             dst.write(banda, 1)
 
 # Archivo de entrada (modifica con la ruta de tu archivo .tif)
-input_tif = "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/imagenes/812T.tif"
+input_tif = "C:/Users/nacho/Documents/TFM/imagenes/812T.tif"
 
 # Guardar las bandas 6, 7 y 8 en archivos separados
 guardar_banda(input_tif, '812T_banda1.tif', 1)

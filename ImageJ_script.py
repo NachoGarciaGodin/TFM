@@ -20,6 +20,12 @@ imp9 = IJ.openImage(banda9)
 imp12 = IJ.openImage(banda12)
 
 # # Verificar si las imágenes se han cargado correctamente
+
+if imp3 is None:
+    print("Error: No se pudo cargar la imagen " + banda3 + ".")
+else:
+    print("Imagen " + banda3 + " cargada correctamente.")
+
 if imp7 is None:
     print("Error: No se pudo cargar la imagen " + banda7 + ".")
 else:
@@ -45,23 +51,26 @@ if imp12 is None:
 else:
     print("Imagen " + banda12 + " cargada correctamente.")
 
-#  Realizar combinación lineal entre las bandas 7, 8 y 8A para estrés vegetal
-IJ.run(imp6, "Multiply...", "value=1")
-IJ.run(imp7, "Multiply...", "value=1")
-IJ.run(imp8A, "Multiply...", "value=1")
-IJ.run(imp9, "Multiply...", "value=20")
-IJ.run(imp12, "Multiply...", "value=20")
+#  Realizar combinación lineal entre las bandas 6, 7 y 8A 
+IJ.run(imp6, "Multiply...", "value=0.4")
+IJ.run(imp7, "Multiply...", "value=0.4")
+IJ.run(imp8A, "Multiply...", "value=0.2")
 
-#----- Operación 2 7+8+8A-9-12 ------
+IJ.run(imp3, "Multiply...", "value=50")
+IJ.run(imp9, "Multiply...", "value=50")
+IJ.run(imp12, "Multiply...", "value=500")
+
+#----- Operación 6+7+8A ------
 IJ.run(imp6, "Add...", imp7.getTitle())
 IJ.run(imp6, "Add...", imp8A.getTitle())
-IJ.run(imp6, "Subtract...", imp9.getTitle())
-IJ.run(imp6, "Subtract...", imp12.getTitle())
+#IJ.run(imp6, "Subtract...", imp3.getTitle())
+#IJ.run(imp6, "Subtract...", imp9.getTitle())
+#IJ.run(imp6, "Subtract...", imp12.getTitle())
 
 
 #  Guardar la combinación
 combinacion = imp6
-IJ.save(combinacion, "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/ImageJ/combinacion_lineal_827T.tif")
+IJ.save(combinacion, "C:/Users/nacho/Documents/TFM/ImageJ/combinacion_lineal_827T.tif")
 
 # Duplicar la combinación para aplicar diferentes filtros
 logar = combinacion.duplicate()
@@ -71,12 +80,14 @@ exponencial = combinacion.duplicate()
 IJ.run(logar, "Log", "")
 
 # Guardar la imagen logarítmica
-IJ.save(logar, "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/ImageJ/logaritmico_827T.tif")
+IJ.save(logar, "C:/Users/nacho/Documents/TFM/ImageJ/logaritmico_827T.tif")
 
 # Aplicar filtro exponencial a la segunda imagen duplicada
 IJ.run(exponencial, "Exp", "")
 
 # Guardar la imagen exponencial
-IJ.save(exponencial, "C:/Users/nacho/OneDrive - Universidad de Alcala/TFM/ImageJ/exponencial_827T.tif")
+IJ.save(exponencial, "C:/Users/nacho/Documents/TFM/ImageJ/exponencial_827T.tif")
 
 print("Proceso completado. Las imágenes han sido guardadas.")
+
+
