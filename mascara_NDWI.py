@@ -4,8 +4,8 @@ from rasterio import open as rio_open
 
 # Rutas de entrada y salida
 ruta_bandas = "C:/Users/nacho/Documents/TFM/bandas_separadas/"
-ruta_comb = "C:/Users/nacho/Documents/TFM/ImageJ/combinacion_lineal_827T.tif"
-ruta_salida = "C:/Users/nacho/Documents/TFM/ImageJ/827T_mascara_ndwi.tif"
+ruta_comb = "C:/Users/nacho/Documents/TFM/ImageJ/combinacion_lineal_812T.tif"
+ruta_salida = "C:/Users/nacho/Documents/TFM/ImageJ/812T_mascara_ndwi.tif"
 
 # Nombres de las bandas
 banda3 = f"{ruta_bandas}812T_banda3.tif"  # Banda Verde
