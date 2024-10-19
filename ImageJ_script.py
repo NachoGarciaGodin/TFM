@@ -19,38 +19,6 @@ imp3 = IJ.openImage(banda3)
 imp9 = IJ.openImage(banda9)
 imp12 = IJ.openImage(banda12)
 
-# # Verificar si las imágenes se han cargado correctamente
-
-if imp3 is None:
-    print("Error: No se pudo cargar la imagen " + banda3 + ".")
-else:
-    print("Imagen " + banda3 + " cargada correctamente.")
-
-if imp7 is None:
-    print("Error: No se pudo cargar la imagen " + banda7 + ".")
-else:
-    print("Imagen " + banda7 + " cargada correctamente.")
-
-if imp6 is None:
-    print("Error: No se pudo cargar la imagen " + banda6 + ".")
-else:
-    print("Imagen " + banda6 + " cargada correctamente.")
-
-if imp8A is None:
-    print("Error: No se pudo cargar la imagen " + banda8A + ".")
-else:
-    print("Imagen " + banda8A + " cargada correctamente.")
-
-if imp9 is None:
-    print("Error: No se pudo cargar la imagen " + banda9 + ".")
-else:
-    print("Imagen " + banda9 + " cargada correctamente.")
-
-if imp12 is None:
-    print("Error: No se pudo cargar la imagen " + banda12 + ".")
-else:
-    print("Imagen " + banda12 + " cargada correctamente.")
-
 #  Realizar combinación lineal entre las bandas 6, 7 y 8A 
 IJ.run(imp6, "Multiply...", "value=0.4")
 IJ.run(imp7, "Multiply...", "value=0.4")
