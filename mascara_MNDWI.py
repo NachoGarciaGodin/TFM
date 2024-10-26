@@ -33,7 +33,7 @@ with rasterio.open(ruta_banda2) as src_banda2, rasterio.open(ruta_banda11) as sr
     mndwi[valid_mask] = (banda2[valid_mask] - banda11[valid_mask]) / suma_bandas[valid_mask]
 
     # Definir un umbral para detectar agua (ejemplo: MNDWI > 0 indica agua)
-    umbral_agua = 0.2
+    umbral_agua = 0.025
 
     # Leer la imagen de combinación lineal para aplicar la máscara
     with rasterio.open(ruta_mascara, 'r+') as dst:

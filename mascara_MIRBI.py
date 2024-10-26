@@ -31,7 +31,7 @@ with rio_open(ruta_comb) as dst:
     nodata_value = dst.nodata  # Obtener valor de no data
 
 # Aplicar la máscara de "no data" donde el MIRBI indica presencia de áreas quemadas (ajusta el umbral según tus necesidades)
-umbral_quemado = 0.1  # Este valor puede ser ajustado
+umbral_quemado = 0.2  # Este valor puede ser ajustado
 datos_comb[mirbi > umbral_quemado] = nodata_value
 
 # Guardar la imagen con la máscara aplicada
