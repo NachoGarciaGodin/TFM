@@ -17,14 +17,17 @@ En separacion_bandas.py está el código que separa las bandas en un .tif cada u
 
 La segunda parte del proyecto se basa en:
   - Combinación lineal -> 0.4*banda6 + 0.4*banda7 + 0.2*banda8A
-  -  Duplico la combinación lineal y aplico a uno el índice NBR2 y a otro el índice NDVI
-  - Umbralizo ambos resultados entre 680 y 780 aproximadamente
-  - Hago la operación AND entre ambas
-  - Hago el filtro 'Mean' al resultado de la AND
-  - Hago el 'Binary'
+  - Duplico la combinación lineal y aplico a uno el índice NBR2 y a otro el índice NDVI
+  - Umbralizo ambos resultados entre 680 y 780 aproximadamente
+  - Hago la operación AND entre ambas
+  - Hago el filtro 'Mean' al resultado de la AND
+  - Hago el 'Binary'
 
 Para ello se ejecuta el script 'ImageJ_script.py' en ImageJ, donde se realiza el proceso explicado para esta segunda parte. El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que este proceso sirva para entrenar una red neuronal.
 
+Lo siguiente, es hacer aplicar la técnica EDA para calcular el tamaño de patch y solape para la red neuronal. Al ejecutar el script 'EDA2.py', se obtiene el tamaño y solape perfecto, calculando el tamaño de píxeles de incendio entre el tamaño de patch. Los resultados son PATCH = 448x448 pixels y SOLAPE = 168 pixels (37.7%). En el script 'EDA.py' se muestra cómo quedan las 400 imágenes que resultan de ese tamaño y solape de patch, se guarda en la imagen 'PATCHES.png'.
+
+Utilizando Keras, se implementará una red neuronal UNET + ResNet 50.
 
 
 
