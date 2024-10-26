@@ -41,20 +41,20 @@ combinacion = imp6
 IJ.save(combinacion, "C:/Users/nacho/Documents/TFM/ImageJ/combinacion_lineal_827T.tif")
 
 # Duplicar la combinación para aplicar diferentes filtros
-logar = combinacion.duplicate()
-exponencial = combinacion.duplicate()
+#logar = combinacion.duplicate()
+#exponencial = combinacion.duplicate()
 
 # Aplicar filtro logarítmico a la primera imagen duplicada
-IJ.run(logar, "Log", "")
+#IJ.run(logar, "Log", "")
 
 # Guardar la imagen logarítmica
-IJ.save(logar, "C:/Users/nacho/Documents/TFM/ImageJ/logaritmico_827T.tif")
+#IJ.save(logar, "C:/Users/nacho/Documents/TFM/ImageJ/logaritmico_827T.tif")
 
 # Aplicar filtro exponencial a la segunda imagen duplicada
-IJ.run(exponencial, "Exp", "")
+#IJ.run(exponencial, "Exp", "")
 
 # Guardar la imagen exponencial
-IJ.save(exponencial, "C:/Users/nacho/Documents/TFM/ImageJ/exponencial_827T.tif")
+#IJ.save(exponencial, "C:/Users/nacho/Documents/TFM/ImageJ/exponencial_827T.tif")
 
 print("Proceso completado. Las imágenes han sido guardadas.")
 
