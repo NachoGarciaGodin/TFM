@@ -23,7 +23,7 @@ La segunda parte del proyecto se basa en:
   - Hago el filtro 'Median' al resultado de la AND
   - Hago el 'Binary'
 
-Para el primer paso, se ejecuta el script 'ImageJ_script.py' en ImageJ. Posteriormente, se ejecutan los scripts 'NBR2.py' y 'NVDI.py'. Después, en ImageJ se abren los resultados y se umbralizan las imágenes, para, a continuación, realizar la operación AND, el friltrado 'mean' y el binarizado fianl. El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que, el resultado de este proceso sirva para entrenar una red neuronal.
+Para el primer paso, se ejecuta el script 'ImageJ_script.py' en ImageJ. Posteriormente, se ejecutan los scripts 'NBR2.py' y 'NVDI.py'. Después, en ImageJ se abren los resultados y se umbralizan las imágenes, para, a continuación, realizar la operación AND, el friltrado 'median' y el binarizado fianl. El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que, el resultado de este proceso sirva para entrenar una red neuronal.
 
 Lo siguiente necesario, es aplicar la técnica EDA para calcular el tamaño de patch y solape necesarios para la entrada de la red neuronal. Al ejecutar el script 'EDA2.py', se obtiene el tamaño y solape perfecto, calculando el tamaño de píxeles de incendio entre el tamaño de patch. Los resultados son PATCH = 448x448 pixels y SOLAPE = 168 pixels (37.7%). En el script 'EDA.py' se muestra cómo quedan las 400 imágenes que resultan de ese tamaño y solape de patch, se guarda en la imagen 'PATCHES.png'.
 
