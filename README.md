@@ -20,7 +20,7 @@ La segunda parte del proyecto se basa en:
   - Duplico la combinación lineal y aplico a uno el índice NBR2 y a otro el índice NDVI
   - Umbralizo ambos resultados entre 680 y 780 aproximadamente
   - Hago la operación AND entre ambas
-  - Hago el filtro 'Mean' al resultado de la AND
+  - Hago el filtro 'Median' al resultado de la AND
   - Hago el 'Binary'
 
 Para el primer paso, se ejecuta el script 'ImageJ_script.py' en ImageJ. Posteriormente, se ejecutan los scripts 'NBR2.py' y 'NVDI.py'. Después, en ImageJ se abren los resultados y se umbralizan las imágenes, para, a continuación, realizar la operación AND, el friltrado 'mean' y el binarizado fianl. El resultado debería parecerse visualmente a la marca de incendios resaltada por expertos, de manera que, el resultado de este proceso sirva para entrenar una red neuronal.
