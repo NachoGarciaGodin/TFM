@@ -29,6 +29,8 @@ Lo siguiente necesario, es aplicar la técnica EDA para calcular el tamaño de p
 
 Utilizando Keras, se implementará una red neuronal UNET + ResNet 50.
 
+Lo primero es generar los patches (p.py) y dividirlo en imgaes y mask. Luego, se dividen en train, test y val de manera stratificada (division_stratificada.py) para que sirvan de entrada a la red. 
+
 
 
 
