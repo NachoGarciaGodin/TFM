@@ -1,0 +1,8 @@
+1- bandas_separadas.py
+2- ImageJ_combinacion.py
+3- ind_umb.py
+4- En ImageJ a mano hacer la and y filtro gaussiano de todas
+
+5- dataset es ya stratificados
+   imágenes y mascaras son la fuente con las imágenes completas para la división
+   output_patches son todos los patches juntos, antes de dividirlos,  que salen de p.py
